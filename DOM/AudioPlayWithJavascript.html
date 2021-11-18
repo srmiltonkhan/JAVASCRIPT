@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Play With Javascript</title>
+    <style>
+        .button{
+            border: none;
+            padding: 10px 20px;
+            
+        }
+        .anim{
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="audio-button-container">
+        <button class="button Fateha">Fateha</button>
+        <button class="button Iklas">Iklas</button>
+    </div>
+</body>
+
+<script>
+    var leng = document.querySelectorAll(".button").length;
+
+    for(var i=0; i<leng; i++){
+        document.querySelectorAll(".button")[i].addEventListener("click",function(){
+            var text = this.innerHTML
+            audioPlay(text)
+            animation(text)
+        })
+    }
+
+    function animation(text){
+        console.log(text)
+        var buttonAnim = document.querySelector("." + text)
+        console.log(buttonAnim)
+        buttonAnim.classList.add("anim")
+
+    setTimeout(function(){
+        buttonAnim.classList.remove("anim")
+    }, 1000);
+    }
+
+
+
+    function audioPlay(text){
+                var audio
+                switch(text){
+                case "Fateha":
+                     audio = new Audio("surah2.mp3")
+                    audio.play();
+                    break;
+                case "Iklas":
+                     audio = new Audio("surah1.mp3")
+                    audio.play();
+                    break;
+                 }
+            }
+</script>
+</html>

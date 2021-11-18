@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener With Anonymous Function</title>
+    <style>
+        .para1{
+            color: blue;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <p id="Para1">Bangldesh with Event Listener</p>
+</body>
+
+<script>
+    var myCont = document.querySelector("#Para1");
+    myCont.addEventListener("mouseover",myfunction);
+
+    function myfunction(){
+        myCont.classList.add("para1")
+    }
+
+myCont.addEventListener("mouseout",outFunction);
+function outFunction(){
+    myCont.classList.remove("para1")
+}
+</script>
+</html>

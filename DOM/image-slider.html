@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+</head>
+<body>
+    <div class="image-slider-container">
+        <button onclick="prev()">Previous</button>
+        <img class="testDiv" src="1.jpg" alt="">
+        <img class="testDiv" src="2.jpg" alt="">
+        <img class="testDiv" src="3.jpg" alt="">
+
+        <button onclick="next()">Next</button>
+    </div>
+</body>
+
+<script>
+    // var images = ["1.jpg","2.jpg","3.jpg"];
+    // console.log(images)
+    var findImageContainer = document.querySelector("img")
+
+    let collections = document.getElementsByClassName("testDiv");
+    let images = [...collections].map(item=>item.currentSrc.split("/").splice(-1).toString())
+    console.log(images)
+
+
+    var count = 0
+    function next(){
+        count++
+        if(count>=images.length){
+            count = 0
+            findImageContainer.src = images[count]
+        }else{
+            findImageContainer.src = images[count]
+        }
+    }
+
+    function prev(){
+        count--;
+        if(count<0){
+            count = images.length-1
+            findImageContainer.src = images[count]
+        }
+        findImageContainer.src = images[count]
+    }
+    setInterval(next,3000)
+</script>
+</html>

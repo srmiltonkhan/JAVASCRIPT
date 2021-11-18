@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler Image Change</title>
+</head>
+<body>
+    <img src="1.jpg" alt="" id="image" width="300px">
+    <br>
+    <button onclick="Pic1()">Pic 1</button>
+    <button onclick="Pic2()">Pic 2</button>
+</body>
+<script>
+var x = document.querySelector("#image");
+    function Pic1(){
+        x.src = "2.jpg"
+    }
+    function Pic2(){
+        x.src = "1.jpg"
+    }
+</script>
+</html>

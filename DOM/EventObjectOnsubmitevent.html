@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Document</title>
+    <style>
+        .container label{
+            display: block;
+            padding: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+   <form action="">
+        <label for="name">
+            Name: <input type="text" id="name" name="name" autofocus>
+        </label>
+        
+        <label for="email">
+            Email: <input type="email" id="email" name="email">
+        </label>
+        
+        <label for="password">
+            Password: <input type="password" id="password" name="password">
+        </label>
+        <input type="submit" id="submit" name="submit" value="save">
+   </form>
+</div>
+</body>
+<script>
+    let form = document.querySelector("form")
+    let name = form.querySelector("#name")
+    let email = form.querySelector("#email")
+    let pass = form.querySelector("#password")
+    form.addEventListener("submit", submitHandler)
+
+    function submitHandler(e){
+        e.preventDefault();
+        console.log(name.value)
+        console.log(email.value)
+        console.log(pass.value)
+
+        name.value= ""
+        email.value= ""
+        pass.value= ""
+    }
+</script>
+</html>

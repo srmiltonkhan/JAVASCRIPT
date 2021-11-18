@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners with multiple elements</title>
+</head>
+<body>
+    <p id="para1">There is no button click anymore</p>
+
+    <button class="myButton">Button 1</button>
+    <button class="myButton">Button 2</button>
+    <button class="myButton">Button 3</button>
+
+</body>
+
+<script>
+
+    var leng = document.querySelectorAll(".myButton").length;
+
+for(var i=0; i<leng; i++){
+    var button = document.querySelectorAll(".myButton")[i].addEventListener("click",function(){
+        var text = this.innerHTML
+      document.querySelector("#para1").innerHTML = text +"You have clicked"
+    });
+}
+</script>
+</html>

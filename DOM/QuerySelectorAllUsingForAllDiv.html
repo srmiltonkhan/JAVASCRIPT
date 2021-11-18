@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuerySelectorAll Use for All class Action</title>
+</head>
+<body>
+    <div class="name1">Milton Khan</div>
+    <div class="name1">Milton Hossain</div>
+    <div class="name1">Milton Khondokar</div>
+    <div class="name1">Milton Hasan</div>
+
+    <button onclick="ColorChange()">Click to change Color</button>
+</body>
+
+<script>
+    function ColorChange(){
+        var i, x;
+        x = document.querySelectorAll(".name1");
+        alert(x)
+        for(i=0; i<x.length; i++){
+            x[i].style.color = "blue";
+        }
+    }
+</script>
+</html>

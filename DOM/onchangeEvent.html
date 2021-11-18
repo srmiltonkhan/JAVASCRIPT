@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onchange event</title>
+</head>
+<body>
+    <!-- <label for="programming-language">
+        <input type="text" name="name" id="">
+    </label> -->
+
+    <!-- <label for="c"><input type="checkbox" name="program" id="c" value="c">C</label>
+    <label for="c"><input type="checkbox" name="program" id="js" value="JavaScript">JavaScript</label> -->
+
+    <select name="program" id="program">
+        <option value="C">C</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Java">Java</option>
+    </select>
+</body>
+<script>
+    const varInput = document.querySelector("#program");
+    console.log(varInput)
+        varInput.addEventListener("change", changeHandler)
+
+        function changeHandler(e){
+            console.log(e.target.value)
+        }
+
+
+
+    // console.log(varInput)
+    // Array.from(varInput).map((program)=>{
+    //     program.addEventListener("change",programHandler)
+    // })
+    // function programHandler(e){
+    //     if(e.target.checked){
+    //         console.log(e.target.value)
+    //     }
+    // }
+
+    // document.addEventListener("change",changeHandler)
+    // console.clear()
+    // function changeHandler(e){
+    //     // console.log(e)
+    //     // console.log(e.type)
+    //     console.log(e.target.value)
+    //     // console.log(e.target.id)
+    // }
+</script>
+</html>

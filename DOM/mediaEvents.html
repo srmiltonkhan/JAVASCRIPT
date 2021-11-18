@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Event</title>
+</head>
+<body>
+  <video width="400" controls>
+      <source src="ocean.mov" type="video/webm">
+      Your browser support video element
+  </video>  
+</body>
+<script>
+    const video = document.querySelector("video")
+    video.addEventListener("canplay", function(){
+        console.log("can paly")
+    })
+
+    video.addEventListener("play", function(){
+        console.log("play")
+    })
+
+    video.addEventListener("pause", function(){
+        console.log("pause")
+    })
+
+    video.addEventListener("playing", function(){
+        console.log("playing")
+    })
+
+    video.addEventListener("changevolume", function(){
+        console.log("changevolume")
+    })
+
+    video.addEventListener("ended", function(){
+        console.log("Thanks for watching")
+    })
+
+    video.addEventListener("volumechange", function(){
+        console.log("volume change")
+    })
+
+    video.addEventListener("waiting", function(){
+        console.log("waiting")
+    })
+   
+</script>
+</html>

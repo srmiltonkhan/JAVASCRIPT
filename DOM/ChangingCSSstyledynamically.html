@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing CSS style dynamically</title>
+    <style>
+        .Para1{
+            color: blue;
+            font-size: 45px;
+        }
+    </style>
+</head>
+<body>
+    <p id="Para1">Changing CSS style dynamically</p>
+    <button onclick = "add()">Add Style</button>
+    <button onclick="remove()">Remove Style</button>
+</body>
+
+<script>
+    var para = document.querySelector("p");
+    function add(){
+        
+        para.classList.add("Para1")
+    }
+    function remove(){
+        para.classList.remove("Para1")
+    }
+</script>
+</html>
