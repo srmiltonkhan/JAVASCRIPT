@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload PDF</title>
+    <script>
+        function handleFileInput(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const fileName = file.name;
+          
+                const namePattern = /(.+?)_/;
+                const regPattern = /_R(\d+)/;
+                const admPattern = /_A(\d+)/;
+                const yearPattern = /_(\d{4})/;
+
+                const nameMatch = fileName.match(namePattern);
+                const regMatch = fileName.match(regPattern);
+                const admMatch = fileName.match(admPattern);
+                const yearMatch = fileName.match(yearPattern);
+
+                if (nameMatch) {
+                    document.getElementById('patient_name').value = nameMatch[1];
+                }
+                if (regMatch) {
+                    document.getElementById('registration_no').value = 'R' + regMatch[1];
+                }
+                if (admMatch) {
+                    document.getElementById('admission_no').value = 'A' + admMatch[1];
+                }
+                if (yearMatch) {
+                    document.getElementById('year').value = yearMatch[1];
+                }
+            }
+
+            console.log(file)
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <label for="pdf">Upload PDF:</label>
+        <input type="file" name="pdf" id="pdf" accept="application/pdf" onchange="handleFileInput(event)" required><br><br>
+
+
+        <label for="patient_name">Patient Name:</label>
+        <input type="text" id="patient_name" readonly><br><br>
+
+        <label for="registration_no">Registration No:</label>
+        <input type="text" id="registration_no" readonly><br><br>
+
+        <label for="admission_no">Admission No:</label>
+        <input type="text" id="admission_no" readonly><br><br>
+
+        <label for="year">Year:</label>
+        <input type="text" id="year" readonly><br><br>
+    </form>
+</body>
+</html>
